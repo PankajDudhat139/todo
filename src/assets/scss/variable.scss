@@ -1,0 +1,66 @@
+$success: #2e7d32;
+$white: #ffffff;
+$black: #000000;
+
+// responsive class
+// Small tablets and large smartphones (landscape view)
+
+$screen-sm-max: 576px;
+// Small tablets (portrait view)
+$screen-md-max: 768px;
+// Tablets and small desktops
+$screen-lg-max: 992px;
+// Large tablets and desktops
+$screen-xl-max: 1200px;
+// Extra Large tablets and desktops
+$screen-xll-max: 1360px;
+// Small devices
+@mixin sm {
+  @media (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+}
+// Medium devices
+@mixin md {
+  @media (max-width: #{$screen-md-max}) {
+    @content;
+  }
+}
+// Large devices
+@mixin lg {
+  @media (max-width: #{$screen-lg-max}) {
+    @content;
+  }
+}
+// Extra large devices
+@mixin xl {
+  @media (max-width: #{$screen-xl-max}) {
+    @content;
+  }
+}
+// Double Extra large devices
+@mixin xll {
+  @media (max-width: #{$screen-xll-max}) {
+    @content;
+  }
+}
+
+//app common mixin
+@mixin css3-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+  -khtml-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  -o-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+/*font-weight classes*/
+$fw100:100;
+$fw300:300;
+$fw400:400;
+$fw500:500;
+$fw600:600;
+$fw700:700;
+$fw800:800;
+$fw900:900;
