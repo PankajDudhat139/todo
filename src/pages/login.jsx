@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import TodoApp from '../todoApp'
 import { useAuth } from "../pages/auth/authContext";
@@ -9,14 +9,27 @@ function App() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    // Check for existing login on component mount
+    useEffect(() => {
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (isLoggedIn === 'true') {
+            login();
+            navigate("/");
+        }
+    }, []);
+
     const handleSubmit = (e) => {
         e.preventDefault()
         if (email && password) {
-            if (email.trim() && password.trim()) {
+            if (email === 'pd@gmail.com' && password === 'pd@gmail.com') {
                 login(); // set isAuthenticated = true
+                localStorage.setItem('isLoggedIn', 'true'); // Save login state
                 navigate("/"); // redirect to home
+                console.log('Logged in with email:', email)
             }
-            console.log('Logged in with email:', email)
+            else {
+                alert('Please enter valid email and password')
+            }
         } else {
             console.log('Please enter email and password')
             alert('Please enter email and password')
