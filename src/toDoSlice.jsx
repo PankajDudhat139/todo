@@ -1,4 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { fetchTodosAPI } from "./todosAPI";
+
+export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
+  return await fetchTodosAPI();
+});
 
 const todosSlice = createSlice({
   name: 'todos',
