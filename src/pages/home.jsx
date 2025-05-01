@@ -78,10 +78,10 @@ function Home() {
   });
 
   return (
-    <div className="todo-app">
+    <div className="todo-app mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div>
         <TodoApp />
-        <h1>Todo List</h1>
+        <h1 className="px-5 text-xl font-bold mt-3">Todo List</h1>
         <AddTodo newTodo={newTodo} setNewTodo={setNewTodo} addTodo={addTodo} />
 
         <TodoList
