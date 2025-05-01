@@ -1,7 +1,7 @@
 function TodoList({ todos, toggleComplete, togglePin, startEdit, deleteTodo }) {
   return (
     <div className="w-full max-w-md mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4 text-gray-800">Active Todos</h2>
+      <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">Active Todos</h2>
       {todos.map((todo) => (
         <div
           key={todo.id}
