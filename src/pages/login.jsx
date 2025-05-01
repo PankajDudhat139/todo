@@ -31,7 +31,6 @@ function App() {
                 alert('Please enter valid email and password')
             }
         } else {
-            console.log('Please enter email and password')
             alert('Please enter email and password')
         }
     }
