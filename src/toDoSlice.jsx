@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { fetchTodosAPI } from "./todosAPI";
 
 export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
@@ -6,7 +6,7 @@ export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
 });
 
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState: [],
   reducers: {
     addTodo: (state, action) => {
